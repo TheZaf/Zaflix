@@ -14,7 +14,7 @@ export const Slider = ({category}) => {
 
     const sliderRef = useRef(null)
 
-    const api = "http://localhost:5000/api/v1";
+    const api = import.meta.env.MODE === "production" ? "/api/v1" : "http://localhost:5000/api/v1"
     axios.defaults.withCredentials = true;
 
     const getContent = async()=> {
