@@ -2,7 +2,7 @@ import axios from 'axios';
 import {create} from 'zustand'
 import toast from 'react-hot-toast'
 
-const api = "http://localhost:5000/api/v1";
+const api = import.meta.env.MODE === "production" ? "/api/v1" : "http://localhost:5000/api/v1"
 
 axios.defaults.withCredentials = true;
 
