@@ -2,8 +2,8 @@ import { fetchFromTMDB } from "../services/tmdb.service.js"
 
 export const getTrendingMovie = async(req,res) =>{
     try {
-        const data = await fetchFromTMDB("https://api.themoviedb.org/3/discover/movie?with_original_language=hi&sort_by=popularity.desc&region=IN&primary_release_date.gte=2025-01-01&vote_count.gte=50");
-        const randomMovie = data.results.slice(0, 5)[Math.floor(Math.random() * 5)];
+        const data = await fetchFromTMDB("https://api.themoviedb.org/3/discover/movie?region=IN&with_origin_country=IN&sort_by=popularity.desc&primary_release_date.gte=2024-01-01&vote_count.gte=100");
+        const randomMovie = data.results.slice(0, 10)[Math.floor(Math.random() * 10)];
 
         res.status(200).json({
             message:"movie fetched successfully!",
