@@ -22,7 +22,7 @@ export const signUp = async(req,res) =>{
        const hashedPassword = await bcrypt.hash(password,salt);
 
         const PROFILE_PICS = ["/avatar1.png", "/avatar2.png", "/avatar3.png"];
-		const image = PROFILE_PICS[newUser.username.length % PROFILE_PICS.length];
+		const image = PROFILE_PICS[username.length % PROFILE_PICS.length];
 
        const newUser = new User({
         username,
